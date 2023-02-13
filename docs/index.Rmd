@@ -2310,8 +2310,8 @@ NB_UF_BANC_Test_ROC <- roc(response = NB_UF_BANC_Test$NB_UF_BANC_Observed,
 |             **[A.2.2]** RF_UF_NANC: Cross-Validation ROC Curve AUC = 0.81301, Test ROC Curve AUC = 0.82002  
 |      **[A.3]** NB: Naive Bayes (<mark style="background-color: #CCECFF">**klaR**</mark> package)
 |             **[A.3.1]** NB_FULL: Cross-Validation ROC Curve AUC = 0.73904, Test ROC Curve AUC = 0.68055 
-|             **[A.3.2]** NB_UF_BAc: Cross-Validation ROC Curve AUC = 0.76825, Test ROC Curve AUC = 0.75231 
-|             **[A.3.3]** NB_UF_BANc: Cross-Validation ROC Curve AUC = 0.76025, Test ROC Curve AUC = 0.76273 
+|             **[A.3.2]** NB_UF_BAC: Cross-Validation ROC Curve AUC = 0.76825, Test ROC Curve AUC = 0.75231 
+|             **[A.3.3]** NB_UF_BANC: Cross-Validation ROC Curve AUC = 0.76025, Test ROC Curve AUC = 0.76273 
 |
 | **[B]** The models applied with univariate filters which demonstrated the best and most consistent ROC Curve AUC metrics are as follows:
 |      **[B.1]**LDA_UF_NANC: Linear Discriminant Analysis With UF Using No Adjustment and No Correlated Predictors (<mark style="background-color: #CCECFF">**MASS**</mark> package)
