@@ -856,6 +856,8 @@ EDA.Bar.Source.FactorVar.Prop <- rbind(EDA.PropTable.Function("E2"),
 
 ###  1.5.1 Linear Discriminant Analysis Without UF (LDA_FULL)
 |
+| [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
+|
 | **[A]** The linear discriminant analysis model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented without recursive feature elimination through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model does not contain any hyperparameter.
@@ -961,6 +963,8 @@ LDA_FULL_Test_ROC <- roc(response = LDA_FULL_Test$LDA_FULL_Observed,
 ```
 
 ###  1.5.2 Linear Discriminant Analysis With UF Using No Adjustment and Correlated Predictors (LDA_UF_NAC)
+|
+| [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
 |
 | **[A]** The linear discriminant analysis model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented with univariate filters using no adjustment for the computed p-values and correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -1072,6 +1076,8 @@ LDA_UF_NAC_Test_ROC <- roc(response = LDA_UF_NAC_Test$LDA_UF_NAC_Observed,
 
 ###  1.5.3 Linear Discriminant Analysis With UF Using Bonferroni Adjustment and Correlated Predictors (LDA_UF_BAC)
 |
+| [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
+|
 | **[A]** The linear discriminant analysis model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented with univariate filters using Bonferroni adjustment for the computed p-values and correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model does not contain any hyperparameter.
@@ -1162,6 +1168,8 @@ LDA_UF_BAC_Test_ROC <- roc(response = LDA_UF_BAC_Test$LDA_UF_BAC_Observed,
 ```
 
 ###  1.5.4 Linear Discriminant Analysis With UF Using No Adjustment and No Correlated Predictors (LDA_UF_NANC)
+|
+| [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
 |
 | **[A]** The linear discriminant analysis model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented with univariate filters using no adjustment for the computed p-values and no correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -1254,6 +1262,8 @@ LDA_UF_NANC_Test_ROC <- roc(response = LDA_UF_NANC_Test$LDA_UF_NANC_Observed,
 ```
 
 ###  1.5.5 Linear Discriminant Analysis With UF Using Bonferroni Adjustment and No Correlated Predictors (LDA_UF_BANC)
+|
+| [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
 |
 | **[A]** The linear discriminant analysis model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented with univariate filters using Bonferroni adjustment for the computed p-values and no correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
