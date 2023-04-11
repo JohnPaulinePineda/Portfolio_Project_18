@@ -962,9 +962,11 @@ LDA_FULL_Test_ROC <- roc(response = LDA_FULL_Test$LDA_FULL_Observed,
 
 ```
 
-###  1.5.2 Linear Discriminant Analysis With UF Using No Adjustment and Correlated Predictors (LDA_UF_NAC)
+###  1.5.2 Linear Discriminant Analysis With UF Using No P-Value Adjustment and With Correlated Predictors (LDA_UF_NAC)
 |
 | [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
+|
+| [Unadjusted P-Values](https://www.jstor.org/stable/2685564?seq=1#page_scan_tab_contents) define the probability of obtaining an effect during hypothesis testing, at least as large as the one actually observed in the sample data, specifically assuming that the null hypothesis is true. For a T-Test, the means of a numeric variable are evaluated between two categories if they significantly differ from each another. For a Chi-Square Test for independence, the distributions of categorical variables in a contingency table are evaluated if they significantly differ from each another.
 |
 | **[A]** The linear discriminant analysis model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented with univariate filters using no adjustment for the computed p-values and correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -1074,7 +1076,7 @@ LDA_UF_NAC_Test_ROC <- roc(response = LDA_UF_NAC_Test$LDA_UF_NAC_Observed,
 
 ```
 
-###  1.5.3 Linear Discriminant Analysis With UF Using Bonferroni Adjustment and Correlated Predictors (LDA_UF_BAC)
+###  1.5.3 Linear Discriminant Analysis With UF Using Bonferroni-Adjusted P-Values and With Correlated Predictors (LDA_UF_BAC)
 |
 | [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
 |
@@ -1167,9 +1169,11 @@ LDA_UF_BAC_Test_ROC <- roc(response = LDA_UF_BAC_Test$LDA_UF_BAC_Observed,
 
 ```
 
-###  1.5.4 Linear Discriminant Analysis With UF Using No Adjustment and No Correlated Predictors (LDA_UF_NANC)
+###  1.5.4 Linear Discriminant Analysis With UF Using No P-Value Adjustment and No Correlated Predictors (LDA_UF_NANC)
 |
 | [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
+|
+| [Unadjusted P-Values](https://www.jstor.org/stable/2685564?seq=1#page_scan_tab_contents) define the probability of obtaining an effect during hypothesis testing, at least as large as the one actually observed in the sample data, specifically assuming that the null hypothesis is true. For a T-Test, the means of a numeric variable are evaluated between two categories if they significantly differ from each another. For a Chi-Square Test for independence, the distributions of categorical variables in a contingency table are evaluated if they significantly differ from each another.
 |
 | **[A]** The linear discriminant analysis model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented with univariate filters using no adjustment for the computed p-values and no correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -1261,7 +1265,7 @@ LDA_UF_NANC_Test_ROC <- roc(response = LDA_UF_NANC_Test$LDA_UF_NANC_Observed,
 
 ```
 
-###  1.5.5 Linear Discriminant Analysis With UF Using Bonferroni Adjustment and No Correlated Predictors (LDA_UF_BANC)
+###  1.5.5 Linear Discriminant Analysis With UF Using Bonferroni-Adjusted P-Values and No Correlated Predictors (LDA_UF_BANC)
 |
 | [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
 |
@@ -1445,9 +1449,11 @@ RF_FULL_Test_ROC <- roc(response = RF_FULL_Test$RF_FULL_Observed,
 ```
 
 
-###  1.5.7 Random Forest With UF Using No Adjustment and Correlated Predictors (RF_UF_NAC)
+###  1.5.7 Random Forest With UF Using No P-Value Adjustment and With Correlated Predictors (RF_UF_NAC)
 |
 | [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees called estimators, with each producing its own prediction. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators.
+|
+| [Unadjusted P-Values](https://www.jstor.org/stable/2685564?seq=1#page_scan_tab_contents) define the probability of obtaining an effect during hypothesis testing, at least as large as the one actually observed in the sample data, specifically assuming that the null hypothesis is true. For a T-Test, the means of a numeric variable are evaluated between two categories if they significantly differ from each another. For a Chi-Square Test for independence, the distributions of categorical variables in a contingency table are evaluated if they significantly differ from each another.
 |
 | **[A]** The random forest model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented with univariate filters using no adjustment for the computed p-values and correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -1558,7 +1564,7 @@ RF_UF_NAC_Test_ROC <- roc(response = RF_UF_NAC_Test$RF_UF_NAC_Observed,
 
 ```
 
-###  1.5.8 Random Forest With UF Using Bonferroni Adjustment and Correlated Predictors (RF_UF_BAC)
+###  1.5.8 Random Forest With UF Using Bonferroni-Adjusted P-Values and With Correlated Predictors (RF_UF_BAC)
 |
 | [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees called estimators, with each producing its own prediction. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators.
 |
@@ -1652,9 +1658,11 @@ RF_UF_BAC_Test_ROC <- roc(response = RF_UF_BAC_Test$RF_UF_BAC_Observed,
 
 ```
 
-###  1.5.9 Random Forest With UF Using No Adjustment and No Correlated Predictors (RF_UF_NANC)
+###  1.5.9 Random Forest With UF Using No P-Value Adjustment and No Correlated Predictors (RF_UF_NANC)
 |
 | [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees called estimators, with each producing its own prediction. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators.
+|
+| [Unadjusted P-Values](https://www.jstor.org/stable/2685564?seq=1#page_scan_tab_contents) define the probability of obtaining an effect during hypothesis testing, at least as large as the one actually observed in the sample data, specifically assuming that the null hypothesis is true. For a T-Test, the means of a numeric variable are evaluated between two categories if they significantly differ from each another. For a Chi-Square Test for independence, the distributions of categorical variables in a contingency table are evaluated if they significantly differ from each another.
 |
 | **[A]** The random forest model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented with univariate filters using no adjustment for the computed p-values and no correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -1747,7 +1755,7 @@ RF_UF_NANC_Test_ROC <- roc(response = RF_UF_NANC_Test$RF_UF_NANC_Observed,
 
 ```
 
-###  1.5.10 Random Forest With UF Using Bonferroni Adjustment and No Correlated Predictors (RF_UF_BANC)
+###  1.5.10 Random Forest With UF Using Bonferroni-Adjusted P-Values and No Correlated Predictors (RF_UF_BANC)
 |
 | [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees called estimators, with each producing its own prediction. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators.
 |
@@ -1927,7 +1935,7 @@ NB_FULL_Test_ROC <- roc(response = NB_FULL_Test$NB_FULL_Observed,
 ```
 
 
-###  1.5.12 Naive Bayes With UF Using No Adjustment and Correlated Predictors (NB_UF_NAC)
+###  1.5.12 Naive Bayes With UF Using No P-Value Adjustment and With Correlated Predictors (NB_UF_NAC)
 |
 | [Naive Bayes Classifier](https://www.jstor.org/stable/2682766) categorizes instances by applying Bayes Theorem in determining posterior probabilities as conditioned by the likelihood of features, and prior probabilities pertaining to both events and features. The algorithm naively assumes independence between features and assigns the same weight (degree of significance) to all given features.
 |
@@ -2041,7 +2049,7 @@ NB_UF_NAC_Test_ROC <- roc(response = NB_UF_NAC_Test$NB_UF_NAC_Observed,
 
 ```
 
-###  1.5.13 Naive Bayes With UF Using Bonferroni Adjustment and Correlated Predictors (NB_UF_BAC)
+###  1.5.13 Naive Bayes With UF Using Bonferroni-Adjusted P-Values and With Correlated Predictors (NB_UF_BAC)
 |
 | [Naive Bayes Classifier](https://www.jstor.org/stable/2682766) categorizes instances by applying Bayes Theorem in determining posterior probabilities as conditioned by the likelihood of features, and prior probabilities pertaining to both events and features. The algorithm naively assumes independence between features and assigns the same weight (degree of significance) to all given features.
 |
@@ -2136,9 +2144,11 @@ NB_UF_BAC_Test_ROC <- roc(response = NB_UF_BAC_Test$NB_UF_BAC_Observed,
 
 ```
 
-###  1.5.14 Naive Bayes With UF Using No Adjustment and No Correlated Predictors (NB_UF_NANC)
+###  1.5.14 Naive Bayes With UF Using No P-Value Adjustment and No Correlated Predictors (NB_UF_NANC)
 |
 | [Naive Bayes Classifier](https://www.jstor.org/stable/2682766) categorizes instances by applying Bayes Theorem in determining posterior probabilities as conditioned by the likelihood of features, and prior probabilities pertaining to both events and features. The algorithm naively assumes independence between features and assigns the same weight (degree of significance) to all given features.
+|
+| [Unadjusted P-Values](https://www.jstor.org/stable/2685564?seq=1#page_scan_tab_contents) define the probability of obtaining an effect during hypothesis testing, at least as large as the one actually observed in the sample data, specifically assuming that the null hypothesis is true. For a T-Test, the means of a numeric variable are evaluated between two categories if they significantly differ from each another. For a Chi-Square Test for independence, the distributions of categorical variables in a contingency table are evaluated if they significantly differ from each another.
 |
 | **[A]** The Naive Bayes model from the  <mark style="background-color: #CCECFF">**klaR**</mark> package was implemented with univariate filters using no adjustment for the computed p-values and no correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -2232,7 +2242,7 @@ NB_UF_NANC_Test_ROC <- roc(response = NB_UF_NANC_Test$NB_UF_NANC_Observed,
 
 ```
 
-###  1.5.15 Naive Bayes With UF Using Bonferroni Adjustment and No Correlated Predictors (NB_UF_BANC)
+###  1.5.15 Naive Bayes With UF Using Bonferroni-Adjusted P-Values and No Correlated Predictors (NB_UF_BANC)
 |
 | [Naive Bayes Classifier](https://www.jstor.org/stable/2682766) categorizes instances by applying Bayes Theorem in determining posterior probabilities as conditioned by the likelihood of features, and prior probabilities pertaining to both events and features. The algorithm naively assumes independence between features and assigns the same weight (degree of significance) to all given features.
 |
@@ -2492,6 +2502,9 @@ print(ROCCurveAUC_Summary, row.names=FALSE)
 | **[Publication]** [The Use of Multiple Measurements in Taxonomic Problems](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) by Ronald Fisher (Annals of Human Genetics)
 | **[Publication]** [Bagging Predictors ](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) by Leo Breiman (Machine Learning)
 | **[Publication]** [Who Discovered Bayes's Theorem?](https://www.jstor.org/stable/2682766) by Stephen Stigler (The American Statistician)
+| **[Publication]** [Statistical Adjustment of Data](https://psycnet.apa.org/record/1944-00642-000) by W Deming (Wiley)
+| **[Publication]** [First (?) Occurrence of Common Terms in Probability and Statistics-A Second List, with Corrections](https://www.jstor.org/stable/2685564?seq=1#page_scan_tab_contents) by H David (The American Statistician)
+| **[Publication]** [On The Use and Interpretation of Certain Test Criteria for Purposes of Statistical Inference](https://www.jstor.org/stable/2331945) by Jerzy Neyman and Egon Pearson (Biometrika)
 | **[Course]** [Applied Data Mining and Statistical Learning](https://online.stat.psu.edu/stat508/) by Penn State Eberly College of Science
 | **[Course]** [Regression Methods](https://online.stat.psu.edu/stat501/) by Penn State Eberly College of Science
 | **[Course]** [Applied Regression Analysis](https://online.stat.psu.edu/stat462/) by Penn State Eberly College of Science
