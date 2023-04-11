@@ -1836,6 +1836,8 @@ RF_UF_BANC_Test_ROC <- roc(response = RF_UF_BANC_Test$RF_UF_BANC_Observed,
 
 ###  1.5.11 Naive Bayes Without UF (NB_FULL)
 |
+| [Naive Bayes Classifier](https://www.jstor.org/stable/2682766) categorizes instances by applying Bayes Theorem in determining posterior probabilities as conditioned by the likelihood of features, and prior probabilities pertaining to both events and features. The algorithm naively assumes independence between features and assigns the same weight (degree of significance) to all given features.
+|
 | **[A]** The naive bayes model from the  <mark style="background-color: #CCECFF">**klaR**</mark> package was implemented without recursive feature elimination through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model contains 3 hyperparameters:
@@ -1916,6 +1918,8 @@ NB_FULL_Test_ROC <- roc(response = NB_FULL_Test$NB_FULL_Observed,
 
 
 ###  1.5.12 Naive Bayes With UF Using No Adjustment and Correlated Predictors (NB_UF_NAC)
+|
+| [Naive Bayes Classifier](https://www.jstor.org/stable/2682766) categorizes instances by applying Bayes Theorem in determining posterior probabilities as conditioned by the likelihood of features, and prior probabilities pertaining to both events and features. The algorithm naively assumes independence between features and assigns the same weight (degree of significance) to all given features.
 |
 | **[A]** The Naive Bayes model from the  <mark style="background-color: #CCECFF">**klaR**</mark> package was implemented with univariate filters using no adjustment for the computed p-values and correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -2029,6 +2033,8 @@ NB_UF_NAC_Test_ROC <- roc(response = NB_UF_NAC_Test$NB_UF_NAC_Observed,
 
 ###  1.5.13 Naive Bayes With UF Using Bonferroni Adjustment and Correlated Predictors (NB_UF_BAC)
 |
+| [Naive Bayes Classifier](https://www.jstor.org/stable/2682766) categorizes instances by applying Bayes Theorem in determining posterior probabilities as conditioned by the likelihood of features, and prior probabilities pertaining to both events and features. The algorithm naively assumes independence between features and assigns the same weight (degree of significance) to all given features.
+|
 | **[A]** The Naive Bayes model from the  <mark style="background-color: #CCECFF">**klaR**</mark> package was implemented with univariate filters using Bonferroni adjustment for the computed p-values and correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model contains 3 hyperparameters:
@@ -2121,6 +2127,8 @@ NB_UF_BAC_Test_ROC <- roc(response = NB_UF_BAC_Test$NB_UF_BAC_Observed,
 ```
 
 ###  1.5.14 Naive Bayes With UF Using No Adjustment and No Correlated Predictors (NB_UF_NANC)
+|
+| [Naive Bayes Classifier](https://www.jstor.org/stable/2682766) categorizes instances by applying Bayes Theorem in determining posterior probabilities as conditioned by the likelihood of features, and prior probabilities pertaining to both events and features. The algorithm naively assumes independence between features and assigns the same weight (degree of significance) to all given features.
 |
 | **[A]** The Naive Bayes model from the  <mark style="background-color: #CCECFF">**klaR**</mark> package was implemented with univariate filters using no adjustment for the computed p-values and no correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -2215,6 +2223,8 @@ NB_UF_NANC_Test_ROC <- roc(response = NB_UF_NANC_Test$NB_UF_NANC_Observed,
 ```
 
 ###  1.5.15 Naive Bayes With UF Using Bonferroni Adjustment and No Correlated Predictors (NB_UF_BANC)
+|
+| [Naive Bayes Classifier](https://www.jstor.org/stable/2682766) categorizes instances by applying Bayes Theorem in determining posterior probabilities as conditioned by the likelihood of features, and prior probabilities pertaining to both events and features. The algorithm naively assumes independence between features and assigns the same weight (degree of significance) to all given features.
 |
 | **[A]** The Naive Bayes model from the  <mark style="background-color: #CCECFF">**klaR**</mark> package was implemented with univariate filters using Bonferroni adjustment for the computed p-values and no correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
