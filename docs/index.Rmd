@@ -1348,6 +1348,8 @@ LDA_UF_BANC_Test_ROC <- roc(response = LDA_UF_BANC_Test$LDA_UF_BANC_Observed,
 
 ###  1.5.6 Random Forest Without UF (RF_FULL)
 |
+| [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees called estimators, with each producing its own prediction. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators.
+|
 | **[A]** The random forest model from the  <mark style="background-color: #CCECFF">**randomForest**</mark> package was implemented without recursive feature elimination through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model contains 1 hyperparameter:
@@ -1434,6 +1436,8 @@ RF_FULL_Test_ROC <- roc(response = RF_FULL_Test$RF_FULL_Observed,
 
 
 ###  1.5.7 Random Forest With UF Using No Adjustment and Correlated Predictors (RF_UF_NAC)
+|
+| [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees called estimators, with each producing its own prediction. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators.
 |
 | **[A]** The random forest model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented with univariate filters using no adjustment for the computed p-values and correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -1546,6 +1550,8 @@ RF_UF_NAC_Test_ROC <- roc(response = RF_UF_NAC_Test$RF_UF_NAC_Observed,
 
 ###  1.5.8 Random Forest With UF Using Bonferroni Adjustment and Correlated Predictors (RF_UF_BAC)
 |
+| [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees called estimators, with each producing its own prediction. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators.
+|
 | **[A]** The random forest model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented with univariate filters using Bonferroni adjustment for the computed p-values and correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
 | **[B]** The model contains 1 hyperparameter:
@@ -1637,6 +1643,8 @@ RF_UF_BAC_Test_ROC <- roc(response = RF_UF_BAC_Test$RF_UF_BAC_Observed,
 ```
 
 ###  1.5.9 Random Forest With UF Using No Adjustment and No Correlated Predictors (RF_UF_NANC)
+|
+| [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees called estimators, with each producing its own prediction. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators.
 |
 | **[A]** The random forest model from the  <mark style="background-color: #CCECFF">**MASS**</mark> package was implemented with univariate filters using no adjustment for the computed p-values and no correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
@@ -1730,6 +1738,8 @@ RF_UF_NANC_Test_ROC <- roc(response = RF_UF_NANC_Test$RF_UF_NANC_Observed,
 ```
 
 ###  1.5.10 Random Forest With UF Using Bonferroni Adjustment and No Correlated Predictors (RF_UF_BANC)
+|
+| [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees called estimators, with each producing its own prediction. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators.
 |
 | **[A]** The random forest model from the  <mark style="background-color: #CCECFF">**randomForest**</mark> package was implemented with univariate filters using Bonferroni adjustment for the computed p-values and no correlated predictors through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
