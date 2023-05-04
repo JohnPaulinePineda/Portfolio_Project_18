@@ -1878,7 +1878,7 @@ RF_UF_BANC_Test_ROC <- roc(response = RF_UF_BANC_Test$RF_UF_BANC_Observed,
 
 ###  1.5.11 Naive Bayes Without UF (NB_FULL)
 |
-| [Naive Bayes Classifier](https://www.jstor.org/stable/2682766) categorizes instances by applying Bayes Theorem in determining posterior probabilities as conditioned by the likelihood of features, and prior probabilities pertaining to both events and features. The algorithm naively assumes independence between features and assigns the same weight (degree of significance) to all given features.
+| [Naive Bayes Classifier](https://www.jstor.org/stable/2682766) categorizes instances by applying Bayes Theorem in determining posterior probabilities as conditioned by the likelihood of features, and prior probabilities pertaining to both events and features. The algorithm naively assumes independence between features and assigns the same weight (degree of significance) to all given features. The class conditional probabilities and the prior probabilities are calculated to yield the posterior probability, and operates by returning the class, which has the maximum posterior probability out of a group of classes.
 |
 | **[A]** The naive bayes model from the  <mark style="background-color: #CCECFF">**klaR**</mark> package was implemented without recursive feature elimination through the <mark style="background-color: #CCECFF">**caret**</mark> package. 
 |
