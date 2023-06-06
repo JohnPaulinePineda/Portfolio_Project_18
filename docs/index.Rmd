@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 ```
 # **1. Table of Contents**
 |
-| This document implements univariate filters for selecting informative predictors using various helpful packages in <mark style="background-color: #CCECFF">**R**</mark>.
+| This project implements different **Univariate Filters** in selecting informative predictors for a modelling problem using various helpful packages in <mark style="background-color: #CCECFF">**R**</mark>. Using the **Linear Discriminant Analysis**, **Random Forest** and **Naive Bayes** model structures, feature selection methods applied in the analysis included the **P-Value Threshold with Bonferroni Correction** and **Correlation Cutoff**. The resulting predictions derived from the candidate models applying various **Univariate Filters** were evaluated in terms of their discrimination power using the receiver operating characteristic (ROC) curve area under the curve (AUC) metric. The ROC AUC values were compared to those of the baseline models which made use of the full data without any form of feature selection, or implemented a model-specific feature selection process.
 |
 | Feature selection is the process of reducing the number of input variables by eliminating redundant or unimportant features and narrowing down the set of features to those most relevant to the machine learning approach, resulting to simpler explainable models, shorter training times due to a more precise subset of features, reduction of variance, increase in precision estimates and more robust solution against the curse of high dimensionality. The algorithms applied in this study (mostly contained in the <mark style="background-color: #CCECFF">**caret**</mark> package) are wrapper feature selection methods which attempt to consider the task of selecting feature subsets as a search problem, whereby their quality is assessed with the preparation, evaluation, and comparison between different feature combinations.
 |
@@ -2382,19 +2382,19 @@ NB_UF_BANC_Test_ROC <- roc(response = NB_UF_BANC_Test$NB_UF_BANC_Observed,
 | Model performance comparison:
 |
 | **[A]** Models which applied univariate filters to select a subset of informative predictors performed better than those which utilized the full set of predictors, although the effectiveness varied across the different types of filter methods. 
-|      **[A.1]** LDA: Linear Discriminant Analysis (<mark style="background-color: #CCECFF">**MASS**</mark> package)
-|             **[A.1.1]** LDA_FULL: Cross-Validation ROC Curve AUC = 0.80151, Test ROC Curve AUC = 0.77199 
-|             **[A.1.2]** LDA_UF_NANC: Cross-Validation ROC Curve AUC = 0.84130, Test ROC Curve AUC = 0.88657 
-|      **[A.2]** RF: Random Forest (<mark style="background-color: #CCECFF">**randomForest**</mark> package)
-|             **[A.2.1]** RF_FULL: Cross-Validation ROC Curve AUC = 0.78268, Test ROC Curve AUC = 0.79803 
-|             **[A.2.2]** RF_UF_NANC: Cross-Validation ROC Curve AUC = 0.81301, Test ROC Curve AUC = 0.82002  
-|      **[A.3]** NB: Naive Bayes (<mark style="background-color: #CCECFF">**klaR**</mark> package)
-|             **[A.3.1]** NB_FULL: Cross-Validation ROC Curve AUC = 0.73904, Test ROC Curve AUC = 0.68055 
-|             **[A.3.2]** NB_UF_BAC: Cross-Validation ROC Curve AUC = 0.76825, Test ROC Curve AUC = 0.75231 
-|             **[A.3.3]** NB_UF_BANC: Cross-Validation ROC Curve AUC = 0.76025, Test ROC Curve AUC = 0.76273 
+|      **[A.1]** **LDA: Linear Discriminant Analysis** (<mark style="background-color: #CCECFF">**MASS**</mark> package)
+|             **[A.1.1]** **LDA_FULL (Linear Discriminant Analysis Without Univariate Filters)**: Cross-Validation ROC Curve AUC = 0.80151, Test ROC Curve AUC = 0.77199 
+|             **[A.1.2]** **LDA_UF_NANC (Linear Discriminant Analysis With Univariate Filters Using No P-Value Adjustment and No Correlated Predictors)**: Cross-Validation ROC Curve AUC = 0.84130, Test ROC Curve AUC = 0.88657 
+|      **[A.2]** **RF: Random Forest** (<mark style="background-color: #CCECFF">**randomForest**</mark> package)
+|             **[A.2.1]** **RF_FULL (Random Forest Without Univariate Filters)**: Cross-Validation ROC Curve AUC = 0.78268, Test ROC Curve AUC = 0.79803 
+|             **[A.2.2]** **RF_UF_NANC (Random Forest With Univariate Filters Using No P-Value Adjustment and No Correlated Predictors)**: Cross-Validation ROC Curve AUC = 0.81301, Test ROC Curve AUC = 0.82002  
+|      **[A.3]** **NB: Naive Bayes** (<mark style="background-color: #CCECFF">**klaR**</mark> package)
+|             **[A.3.1]** **NB_FULL (Linear Discriminant Analysis Without Univariate Filters)**: Cross-Validation ROC Curve AUC = 0.73904, Test ROC Curve AUC = 0.68055 
+|             **[A.3.2]** **NB_UF_BAC (Naive Bayes With Univariate Filters Using Bonferroni-Adjusted P-Values and With Correlated Predictors)**: Cross-Validation ROC Curve AUC = 0.76825, Test ROC Curve AUC = 0.75231 
+|             **[A.3.3]** **NB_UF_BANC (Naive Bayes With Univariate Filters Using Bonferroni-Adjusted P-Values and No Correlated Predictors)**: Cross-Validation ROC Curve AUC = 0.76025, Test ROC Curve AUC = 0.76273 
 |
 | **[B]** The models applied with univariate filters which demonstrated the best and most consistent ROC Curve AUC metrics are as follows:
-|      **[B.1]**LDA_UF_NANC: Linear Discriminant Analysis With UF Using No Adjustment and No Correlated Predictors (<mark style="background-color: #CCECFF">**MASS**</mark> package)
+|      **[B.1]** **LDA_UF_NANC: Linear Discriminant Analysis With Univariate Filters Using No Adjustment and No Correlated Predictors** (<mark style="background-color: #CCECFF">**MASS**</mark> package)
 |
 ```{r section_1.6, warning=FALSE, message=FALSE}
 ##################################
