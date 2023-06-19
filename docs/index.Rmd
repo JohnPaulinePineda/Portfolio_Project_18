@@ -36,6 +36,9 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 |      **[B.2]** 127/128 predictors = All remaining variables (3/127 factor + 124/127 numeric)
 |     
 | 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.1, warning=FALSE, message=FALSE}
 ##################################
 # Loading R libraries
@@ -131,6 +134,9 @@ PDA <- Alzheimer_Train
   row.names=NULL)
 )
 ```
+
+</details>
+
 ##  1.2 Data Quality Assessment
 |
 | Data quality assessment:
@@ -145,6 +151,10 @@ PDA <- Alzheimer_Train
 |
 | **[D]** No high skewness observed for any variable with Skewness>3 or Skewness<(-3).
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.2, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -363,6 +373,9 @@ if (length(names(DQA.Predictors.Numeric))==0) {
 }
 
 ```
+
+</details>
+
 ##  1.3 Data Preprocessing
 
 ###  1.3.1 Outlier
@@ -377,6 +390,10 @@ if (length(names(DQA.Predictors.Numeric))==0) {
 |      **[A.5]** <span style="color: #FF0000">MCP_2</span> variable (21 outliers detected)
 |      **[A.6]** <span style="color: #FF0000">Prostatic_Acid_Phospatase</span> variable (10 outliers detected)
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.1, warning=FALSE, message=FALSE, fig.width=15, fig.height=3}
 ##################################
 # Loading dataset
@@ -429,6 +446,8 @@ dim(DPA.Predictors.Numeric)
 
 ```
 
+</details>
+
 ###  1.3.2 Zero and Near-Zero Variance
 |
 | Zero and near-zero variance data assessment:
@@ -437,6 +456,10 @@ dim(DPA.Predictors.Numeric)
 |
 | **[B]** No low variance noted for any variable using a preprocessing summary from the <mark style="background-color: #CCECFF">**caret**</mark> package. The <span style="color: #0000FF">nearZeroVar</span> method using both the <span style="color: #0000FF">freqCut</span> and <span style="color: #0000FF">uniqueCut</span> criteria set at 95/5 and 10, respectively, were applied on the dataset.
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.2, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -498,12 +521,18 @@ if ((nrow(DPA_LowVariance[DPA_LowVariance$nzv,]))==0){
 
 ```
 
+</details>
+
 ###  1.3.3 Collinearity
 |
 | High collinearity data assessment:
 |
 | **[A]** No high correlation > 95% were noted for any variable pair as confirmed using the preprocessing summaries from the <mark style="background-color: #CCECFF">**caret**</mark> and <mark style="background-color: #CCECFF">**lares**</mark> packages.
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.3, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -599,12 +628,18 @@ if (DPA_HighlyCorrelatedCount > 0) {
 
 ```
 
+</details>
+
 ###  1.3.4 Linear Dependencies
 |
 | Linear dependency data assessment:
 |
 | **[A]** No linear dependencies noted for any subset of variables using the preprocessing summary from the <mark style="background-color: #CCECFF">**caret**</mark> package applying the <span style="color: #0000FF">findLinearCombos</span> method which utilizes the QR decomposition of a matrix to enumerate sets of linear combinations (if they exist). 
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.4, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -681,6 +716,8 @@ if (DPA_LinearlyDependentCount > 0) {
 
 ```
 
+</details>
+
 ###  1.3.5 Pre-Processed Dataset
 | Preliminary dataset assessment:
 |
@@ -701,6 +738,10 @@ if (DPA_LinearlyDependentCount > 0) {
 |      **[C.4]** No predictors removed due to high correlation
 |      **[C.5]** No predictors removed due to linear dependencies
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.7, warning=FALSE, message=FALSE}
 ##################################
 # Creating the pre-modelling
@@ -745,6 +786,8 @@ dim(PMA_PreModelling_Test)
 
 ```
 
+</details>
+
 ##  1.4 Data Exploration
 |
 | Exploratory data analysis:
@@ -775,6 +818,10 @@ dim(PMA_PreModelling_Test)
 |      **[B.1]** <span style="color: #FF0000">E2</span> variable (factor)
 |      **[B.2]** <span style="color: #FF0000">E4</span> variable (factor)
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.4, warning=FALSE, message=FALSE}
 ##################################
 # Loading dataset
@@ -852,6 +899,8 @@ EDA.Bar.Source.FactorVar.Prop <- rbind(EDA.PropTable.Function("E2"),
 
 ```
 
+</details>
+
 ##  1.5 Univariate Filters (UF)
 
 ###  1.5.1 Linear Discriminant Analysis Without UF (LDA_FULL)
@@ -871,6 +920,10 @@ EDA.Bar.Source.FactorVar.Prop <- rbind(EDA.PropTable.Function("E2"),
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** ROC Curve AUC = 0.77199
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.1, warning=FALSE, message=FALSE}
 ##################################
 # Converting all predictors to numeric
@@ -962,6 +1015,8 @@ LDA_FULL_Test_ROC <- roc(response = LDA_FULL_Test$LDA_FULL_Observed,
 
 ```
 
+</details>
+
 ###  1.5.2 Linear Discriminant Analysis With UF Using No P-Value Adjustment and With Correlated Predictors (LDA_UF_NAC)
 |
 | [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
@@ -986,6 +1041,10 @@ LDA_FULL_Test_ROC <- roc(response = LDA_FULL_Test$LDA_FULL_Observed,
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** ROC Curve AUC = 0.88310
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.2, warning=FALSE, message=FALSE}
 ##################################
 # Creating a function to calculates p-values
@@ -1078,6 +1137,8 @@ LDA_UF_NAC_Test_ROC <- roc(response = LDA_UF_NAC_Test$LDA_UF_NAC_Observed,
 
 ```
 
+</details>
+
 ###  1.5.3 Linear Discriminant Analysis With UF Using Bonferroni-Adjusted P-Values and With Correlated Predictors (LDA_UF_BAC)
 |
 | [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
@@ -1102,6 +1163,10 @@ LDA_UF_NAC_Test_ROC <- roc(response = LDA_UF_NAC_Test$LDA_UF_NAC_Observed,
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** ROC Curve AUC = 0.80324
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.3, warning=FALSE, message=FALSE}
 ##################################
 # Creating a function to filter out
@@ -1175,6 +1240,8 @@ LDA_UF_BAC_Test_ROC <- roc(response = LDA_UF_BAC_Test$LDA_UF_BAC_Observed,
 
 ```
 
+</details>
+
 ###  1.5.4 Linear Discriminant Analysis With UF Using No P-Value Adjustment and No Correlated Predictors (LDA_UF_NANC)
 |
 | [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
@@ -1199,6 +1266,10 @@ LDA_UF_BAC_Test_ROC <- roc(response = LDA_UF_BAC_Test$LDA_UF_BAC_Observed,
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** ROC Curve AUC = 0.88657
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.4, warning=FALSE, message=FALSE}
 ##################################
 # Creating a function to filter out
@@ -1273,6 +1344,8 @@ LDA_UF_NANC_Test_ROC <- roc(response = LDA_UF_NANC_Test$LDA_UF_NANC_Observed,
 
 ```
 
+</details>
+
 ###  1.5.5 Linear Discriminant Analysis With UF Using Bonferroni-Adjusted P-Values and No Correlated Predictors (LDA_UF_BANC)
 |
 | [Linear Discriminant Analysis](https://www.semanticscholar.org/paper/THE-USE-OF-MULTIPLE-MEASUREMENTS-IN-TAXONOMIC-Fisher/ab21376e43ac90a4eafd14f0f02a0c87502b6bbf) finds a linear combination of features that best separates the classes in a data set by projecting the data onto a lower-dimensional space that maximizes the separation between the classes. The algorithm searches for a set of linear discriminants that maximize the ratio of between-class variance to within-class variance by evaluating directions in the feature space that best separate the different classes of data. LDA assumes that the data has a Gaussian distribution and that the covariance matrices of the different classes are equal, in addition to the data being linearly separable by the presence of a linear decision boundary can accurately classify the different classes.
@@ -1297,6 +1370,10 @@ LDA_UF_NANC_Test_ROC <- roc(response = LDA_UF_NANC_Test$LDA_UF_NANC_Observed,
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** ROC Curve AUC = 0.80324
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.5, warning=FALSE, message=FALSE}
 ##################################
 # Creating a function to filter out
@@ -1372,6 +1449,8 @@ LDA_UF_BANC_Test_ROC <- roc(response = LDA_UF_BANC_Test$LDA_UF_BANC_Observed,
 
 ```
 
+</details>
+
 ###  1.5.6 Random Forest Without UF (RF_FULL)
 |
 | [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees called estimators, with each producing its own prediction. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators.
@@ -1395,6 +1474,10 @@ LDA_UF_BANC_Test_ROC <- roc(response = LDA_UF_BANC_Test$LDA_UF_BANC_Observed,
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** ROC Curve AUC = 0.79803
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.6, warning=FALSE, message=FALSE}
 ##################################
 # Running the random forest model
@@ -1460,6 +1543,7 @@ RF_FULL_Test_ROC <- roc(response = RF_FULL_Test$RF_FULL_Observed,
 
 ```
 
+</details>
 
 ###  1.5.7 Random Forest With UF Using No P-Value Adjustment and With Correlated Predictors (RF_UF_NAC)
 |
@@ -1486,6 +1570,10 @@ RF_FULL_Test_ROC <- roc(response = RF_FULL_Test$RF_FULL_Observed,
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** ROC Curve AUC = 0.81944
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.7, warning=FALSE, message=FALSE}
 ##################################
 # Creating a function to calculates p-values
@@ -1578,6 +1666,8 @@ RF_UF_NAC_Test_ROC <- roc(response = RF_UF_NAC_Test$RF_UF_NAC_Observed,
 
 ```
 
+</details>
+
 ###  1.5.8 Random Forest With UF Using Bonferroni-Adjusted P-Values and With Correlated Predictors (RF_UF_BAC)
 |
 | [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees called estimators, with each producing its own prediction. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators.
@@ -1603,6 +1693,10 @@ RF_UF_NAC_Test_ROC <- roc(response = RF_UF_NAC_Test$RF_UF_NAC_Observed,
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** ROC Curve AUC = 0.75868
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.8, warning=FALSE, message=FALSE}
 ##################################
 # Creating a function to filter out
@@ -1676,6 +1770,8 @@ RF_UF_BAC_Test_ROC <- roc(response = RF_UF_BAC_Test$RF_UF_BAC_Observed,
 
 ```
 
+</details>
+
 ###  1.5.9 Random Forest With UF Using No P-Value Adjustment and No Correlated Predictors (RF_UF_NANC)
 |
 | [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees called estimators, with each producing its own prediction. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators.
@@ -1701,6 +1797,10 @@ RF_UF_BAC_Test_ROC <- roc(response = RF_UF_BAC_Test$RF_UF_BAC_Observed,
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** ROC Curve AUC = 0.82002
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.9, warning=FALSE, message=FALSE}
 ##################################
 # Creating a function to filter out
@@ -1775,6 +1875,8 @@ RF_UF_NANC_Test_ROC <- roc(response = RF_UF_NANC_Test$RF_UF_NANC_Observed,
 
 ```
 
+</details>
+
 ###  1.5.10 Random Forest With UF Using Bonferroni-Adjusted P-Values and No Correlated Predictors (RF_UF_BANC)
 |
 | [Random Forest](https://link.springer.com/content/pdf/10.1007/BF00058655.pdf) is an ensemble learning method made up of a large set of small decision trees called estimators, with each producing its own prediction. The random forest model aggregates the predictions of the estimators to produce a more accurate prediction. The algorithm involves bootstrap aggregating (where smaller subsets of the training data are repeatedly subsampled with replacement), random subspacing (where a subset of features are sampled and used to train each individual estimator), estimator training (where unpruned decision trees are formulated for each estimator) and inference by aggregating the predictions of all estimators.
@@ -1800,6 +1902,10 @@ RF_UF_NANC_Test_ROC <- roc(response = RF_UF_NANC_Test$RF_UF_NANC_Observed,
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** ROC Curve AUC = 0.75868
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.10, warning=FALSE, message=FALSE}
 ##################################
 # Creating a function to filter out
@@ -1875,6 +1981,7 @@ RF_UF_BANC_Test_ROC <- roc(response = RF_UF_BANC_Test$RF_UF_BANC_Observed,
 
 ```
 
+</details>
 
 ###  1.5.11 Naive Bayes Without UF (NB_FULL)
 |
@@ -1896,6 +2003,10 @@ RF_UF_BANC_Test_ROC <- roc(response = RF_UF_BANC_Test$RF_UF_BANC_Observed,
 | **[E]** The independent test model performance of the final model is summarized as follows:
 |      **[E.1]** ROC Curve AUC = 0.68055
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.11, warning=FALSE, message=FALSE}
 ##################################
 # Running the naive bayes model
@@ -1958,6 +2069,7 @@ NB_FULL_Test_ROC <- roc(response = NB_FULL_Test$NB_FULL_Observed,
 
 ```
 
+</details>
 
 ###  1.5.12 Naive Bayes With UF Using No P-Value Adjustment and With Correlated Predictors (NB_UF_NAC)
 |
@@ -1986,6 +2098,10 @@ NB_FULL_Test_ROC <- roc(response = NB_FULL_Test$NB_FULL_Observed,
 | **[E]** The independent test model peNBormance of the final model is summarized as follows:
 |      **[E.1]** ROC Curve AUC = 0.69791
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.12, warning=FALSE, message=FALSE}
 ##################################
 # Creating a function to calculates p-values
@@ -2077,6 +2193,8 @@ NB_UF_NAC_Test_ROC <- roc(response = NB_UF_NAC_Test$NB_UF_NAC_Observed,
 
 ```
 
+</details>
+
 ###  1.5.13 Naive Bayes With UF Using Bonferroni-Adjusted P-Values and With Correlated Predictors (NB_UF_BAC)
 |
 | [Naive Bayes Classifier](https://www.jstor.org/stable/2682766) categorizes instances by applying Bayes Theorem in determining posterior probabilities as conditioned by the likelihood of features, and prior probabilities pertaining to both events and features. The algorithm naively assumes independence between features and assigns the same weight (degree of significance) to all given features. The class conditional probabilities and the prior probabilities are calculated to yield the posterior probability, and operates by returning the class, which has the maximum posterior probability out of a group of classes.
@@ -2104,6 +2222,10 @@ NB_UF_NAC_Test_ROC <- roc(response = NB_UF_NAC_Test$NB_UF_NAC_Observed,
 | **[E]** The independent test model peNBormance of the final model is summarized as follows:
 |      **[E.1]** ROC Curve AUC = 0.76273
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.13, warning=FALSE, message=FALSE}
 ##################################
 # Creating a function to filter out
@@ -2176,6 +2298,8 @@ NB_UF_BAC_Test_ROC <- roc(response = NB_UF_BAC_Test$NB_UF_BAC_Observed,
 
 ```
 
+</details>
+
 ###  1.5.14 Naive Bayes With UF Using No P-Value Adjustment and No Correlated Predictors (NB_UF_NANC)
 |
 | [Naive Bayes Classifier](https://www.jstor.org/stable/2682766) categorizes instances by applying Bayes Theorem in determining posterior probabilities as conditioned by the likelihood of features, and prior probabilities pertaining to both events and features. The algorithm naively assumes independence between features and assigns the same weight (degree of significance) to all given features. The class conditional probabilities and the prior probabilities are calculated to yield the posterior probability, and operates by returning the class, which has the maximum posterior probability out of a group of classes.
@@ -2203,6 +2327,10 @@ NB_UF_BAC_Test_ROC <- roc(response = NB_UF_BAC_Test$NB_UF_BAC_Observed,
 | **[E]** The independent test model peNBormance of the final model is summarized as follows:
 |      **[E.1]** ROC Curve AUC = 0.69907
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.14, warning=FALSE, message=FALSE}
 ##################################
 # Creating a function to filter out
@@ -2276,6 +2404,8 @@ NB_UF_NANC_Test_ROC <- roc(response = NB_UF_NANC_Test$NB_UF_NANC_Observed,
 
 ```
 
+</details>
+
 ###  1.5.15 Naive Bayes With UF Using Bonferroni-Adjusted P-Values and No Correlated Predictors (NB_UF_BANC)
 |
 | [Naive Bayes Classifier](https://www.jstor.org/stable/2682766) categorizes instances by applying Bayes Theorem in determining posterior probabilities as conditioned by the likelihood of features, and prior probabilities pertaining to both events and features. The algorithm naively assumes independence between features and assigns the same weight (degree of significance) to all given features. The class conditional probabilities and the prior probabilities are calculated to yield the posterior probability, and operates by returning the class, which has the maximum posterior probability out of a group of classes.
@@ -2303,6 +2433,10 @@ NB_UF_NANC_Test_ROC <- roc(response = NB_UF_NANC_Test$NB_UF_NANC_Observed,
 | **[E]** The independent test model peNBormance of the final model is summarized as follows:
 |      **[E.1]** ROC Curve AUC = 0.76273
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.5.15, warning=FALSE, message=FALSE}
 ##################################
 # Creating a function to filter out
@@ -2377,6 +2511,8 @@ NB_UF_BANC_Test_ROC <- roc(response = NB_UF_BANC_Test$NB_UF_BANC_Observed,
 
 ```
 
+</details>
+
 ##  1.6 Model Evaluation Summary
 |
 | Model performance comparison:
@@ -2410,6 +2546,10 @@ NB_UF_BANC_Test_ROC <- roc(response = NB_UF_BANC_Test$NB_UF_BANC_Observed,
 | **[B]** The models applied with univariate filters which demonstrated the best and most consistent ROC Curve AUC metrics are as follows:
 |      **[B.1]** **LDA_UF_NANC: Linear Discriminant Analysis With Univariate Filters Using No Adjustment and No Correlated Predictors** (<mark style="background-color: #CCECFF">**MASS**</mark> package)
 |
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.6, warning=FALSE, message=FALSE}
 ##################################
 # Consolidating all evaluation results
@@ -2494,6 +2634,8 @@ print(ROCCurveAUC_Summary, row.names=FALSE)
                            pch = 16,
                            cex = 2))
 ```
+
+</details>
 
 # **2. References**
 |
