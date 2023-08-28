@@ -913,12 +913,12 @@ EDA.Bar.Source.FactorVar.Prop <- rbind(EDA.PropTable.Function("E2"),
 |
 | **[C]** The cross-validated model performance of the final model is summarized as follows:
 |      **[C.1]** Final model configuration is fixed due to the absence of a hyperparameter
-|      **[C.2]** ROC Curve AUC = 0.80151
+|      **[C.2]** AUROC = 0.80151
 |
 | **[D]** The model does not allow for ranking of predictors in terms of variable importance.
 |
 | **[E]** The independent test model performance of the final model is summarized as follows:
-|      **[E.1]** ROC Curve AUC = 0.77199
+|      **[E.1]** AUROC = 0.77199
 |
 |
 
@@ -1036,10 +1036,10 @@ LDA_FULL_Test_ROC <- roc(response = LDA_FULL_Test$LDA_FULL_Observed,
 |
 | **[D]** The cross-validated model performance of the final model is summarized as follows:
 |      **[D.1]** Final model configuration involves variable subset=47 to 62
-|      **[D.2]** ROC Curve AUC = 0.84378
+|      **[D.2]** AUROC = 0.84378
 |
 | **[E]** The independent test model performance of the final model is summarized as follows:
-|      **[E.1]** ROC Curve AUC = 0.88310
+|      **[E.1]** AUROC = 0.88310
 |
 |
 
@@ -1158,10 +1158,10 @@ LDA_UF_NAC_Test_ROC <- roc(response = LDA_UF_NAC_Test$LDA_UF_NAC_Observed,
 |
 | **[D]** The cross-validated model performance of the final model is summarized as follows:
 |      **[D.1]** Final model configuration involves variable subset=10 to 18
-|      **[D.2]** ROC Curve AUC = 0.75914
+|      **[D.2]** AUROC = 0.75914
 |
 | **[E]** The independent test model performance of the final model is summarized as follows:
-|      **[E.1]** ROC Curve AUC = 0.80324
+|      **[E.1]** AUROC = 0.80324
 |
 |
 
@@ -1261,10 +1261,10 @@ LDA_UF_BAC_Test_ROC <- roc(response = LDA_UF_BAC_Test$LDA_UF_BAC_Observed,
 |
 | **[D]** The cross-validated model performance of the final model is summarized as follows:
 |      **[D.1]** Final model configuration involves variable subset=45 to 59
-|      **[D.2]** ROC Curve AUC = 0.84130
+|      **[D.2]** AUROC = 0.84130
 |
 | **[E]** The independent test model performance of the final model is summarized as follows:
-|      **[E.1]** ROC Curve AUC = 0.88657
+|      **[E.1]** AUROC = 0.88657
 |
 |
 
@@ -1365,10 +1365,10 @@ LDA_UF_NANC_Test_ROC <- roc(response = LDA_UF_NANC_Test$LDA_UF_NANC_Observed,
 |
 | **[D]** The cross-validated model performance of the final model is summarized as follows:
 |      **[D.1]** Final model configuration involves variable subset=10 to 18
-|      **[D.2]** ROC Curve AUC = 0.75914
+|      **[D.2]** AUROC = 0.75914
 |
 | **[E]** The independent test model performance of the final model is summarized as follows:
-|      **[E.1]** ROC Curve AUC = 0.80324
+|      **[E.1]** AUROC = 0.80324
 |
 |
 
@@ -1462,7 +1462,7 @@ LDA_UF_BANC_Test_ROC <- roc(response = LDA_UF_BANC_Test$LDA_UF_BANC_Observed,
 |
 | **[C]** The cross-validated model performance of the final model is summarized as follows:
 |      **[C.1]** Final model configuration involves mtry=11
-|      **[C.2]** ROC Curve AUC = 0.78268
+|      **[C.2]** AUROC = 0.78268
 |
 | **[D]** The model allows for ranking of predictors in terms of variable importance. The top-performing predictors in the model are as follows:
 |      **[D.1]** <span style="color: #FF0000">MMP10</span> variable (numeric)
@@ -1472,7 +1472,7 @@ LDA_UF_BANC_Test_ROC <- roc(response = LDA_UF_BANC_Test$LDA_UF_BANC_Observed,
 |      **[D.5]** <span style="color: #FF0000">Pancreatic_polypeptide</span> variable (numeric)
 |
 | **[E]** The independent test model performance of the final model is summarized as follows:
-|      **[E.1]** ROC Curve AUC = 0.79803
+|      **[E.1]** AUROC = 0.79803
 |
 |
 
@@ -1565,10 +1565,10 @@ RF_FULL_Test_ROC <- roc(response = RF_FULL_Test$RF_FULL_Observed,
 |
 | **[D]** The cross-validated model performance of the final model is summarized as follows:
 |      **[D.1]** Final model configuration involves variable subset=47 to 62
-|      **[D.2]** ROC Curve AUC = 0.81563
+|      **[D.2]** AUROC = 0.81563
 |
 | **[E]** The independent test model performance of the final model is summarized as follows:
-|      **[E.1]** ROC Curve AUC = 0.81944
+|      **[E.1]** AUROC = 0.81944
 |
 |
 
@@ -1688,10 +1688,10 @@ RF_UF_NAC_Test_ROC <- roc(response = RF_UF_NAC_Test$RF_UF_NAC_Observed,
 |
 | **[D]** The cross-validated model performance of the final model is summarized as follows:
 |      **[D.1]** Final model configuration involves variable subset=10 to 18
-|      **[D.2]** ROC Curve AUC = 0.75888
+|      **[D.2]** AUROC = 0.75888
 |
 | **[E]** The independent test model performance of the final model is summarized as follows:
-|      **[E.1]** ROC Curve AUC = 0.75868
+|      **[E.1]** AUROC = 0.75868
 |
 |
 
@@ -1792,10 +1792,10 @@ RF_UF_BAC_Test_ROC <- roc(response = RF_UF_BAC_Test$RF_UF_BAC_Observed,
 |
 | **[D]** The cross-validated model performance of the final model is summarized as follows:
 |      **[D.1]** Final model configuration involves variable subset=45 to 59
-|      **[D.2]** ROC Curve AUC = 0.81301
+|      **[D.2]** AUROC = 0.81301
 |
 | **[E]** The independent test model performance of the final model is summarized as follows:
-|      **[E.1]** ROC Curve AUC = 0.82002
+|      **[E.1]** AUROC = 0.82002
 |
 |
 
@@ -1897,10 +1897,10 @@ RF_UF_NANC_Test_ROC <- roc(response = RF_UF_NANC_Test$RF_UF_NANC_Observed,
 |
 | **[D]** The cross-validated model performance of the final model is summarized as follows:
 |      **[D.1]** Final model configuration involves variable subset=10 to 18
-|      **[D.2]** ROC Curve AUC = 0.75888
+|      **[D.2]** AUROC = 0.75888
 |
 | **[E]** The independent test model performance of the final model is summarized as follows:
-|      **[E.1]** ROC Curve AUC = 0.75868
+|      **[E.1]** AUROC = 0.75868
 |
 |
 
@@ -1996,12 +1996,12 @@ RF_UF_BANC_Test_ROC <- roc(response = RF_UF_BANC_Test$RF_UF_BANC_Observed,
 |
 | **[C]** The cross-validated model performance of the final model is summarized as follows:
 |      **[C.1]** Final model configuration involves fL=0, adjust=TRUE and usekernel=TRUE
-|      **[C.2]** ROC Curve AUC = 0.73904
+|      **[C.2]** AUROC = 0.73904
 |
 | **[D]** The model does not allow for ranking of predictors in terms of variable importance.
 |
 | **[E]** The independent test model performance of the final model is summarized as follows:
-|      **[E.1]** ROC Curve AUC = 0.68055
+|      **[E.1]** AUROC = 0.68055
 |
 |
 
@@ -2093,10 +2093,10 @@ NB_FULL_Test_ROC <- roc(response = NB_FULL_Test$NB_FULL_Observed,
 |
 | **[D]** The cross-validated model peNBormance of the final model is summarized as follows:
 |      **[D.1]** Final model configuration involves variable subset=47 to 62
-|      **[D.2]** ROC Curve AUC = 0.74710
+|      **[D.2]** AUROC = 0.74710
 |
 | **[E]** The independent test model peNBormance of the final model is summarized as follows:
-|      **[E.1]** ROC Curve AUC = 0.69791
+|      **[E.1]** AUROC = 0.69791
 |
 |
 
@@ -2217,10 +2217,10 @@ NB_UF_NAC_Test_ROC <- roc(response = NB_UF_NAC_Test$NB_UF_NAC_Observed,
 |
 | **[D]** The cross-validated model peNBormance of the final model is summarized as follows:
 |      **[D.1]** Final model configuration involves variable subset=10 to 18
-|      **[D.2]** ROC Curve AUC = 0.76025
+|      **[D.2]** AUROC = 0.76025
 |
 | **[E]** The independent test model peNBormance of the final model is summarized as follows:
-|      **[E.1]** ROC Curve AUC = 0.76273
+|      **[E.1]** AUROC = 0.76273
 |
 |
 
@@ -2322,10 +2322,10 @@ NB_UF_BAC_Test_ROC <- roc(response = NB_UF_BAC_Test$NB_UF_BAC_Observed,
 |
 | **[D]** The cross-validated model peNBormance of the final model is summarized as follows:
 |      **[D.1]** Final model configuration involves variable subset=45 to 59
-|      **[D.2]** ROC Curve AUC = 0.74847
+|      **[D.2]** AUROC = 0.74847
 |
 | **[E]** The independent test model peNBormance of the final model is summarized as follows:
-|      **[E.1]** ROC Curve AUC = 0.69907
+|      **[E.1]** AUROC = 0.69907
 |
 |
 
@@ -2428,10 +2428,10 @@ NB_UF_NANC_Test_ROC <- roc(response = NB_UF_NANC_Test$NB_UF_NANC_Observed,
 |
 | **[D]** The cross-validated model peNBormance of the final model is summarized as follows:
 |      **[D.1]** Final model configuration involves variable subset=10 to 18
-|      **[D.2]** ROC Curve AUC = 0.76025
+|      **[D.2]** AUROC = 0.76025
 |
 | **[E]** The independent test model peNBormance of the final model is summarized as follows:
-|      **[E.1]** ROC Curve AUC = 0.76273
+|      **[E.1]** AUROC = 0.76273
 |
 |
 
@@ -2520,30 +2520,30 @@ NB_UF_BANC_Test_ROC <- roc(response = NB_UF_BANC_Test$NB_UF_BANC_Observed,
 | **[A]** Models which applied univariate filters to select a subset of informative predictors performed better than those which utilized the full set of predictors, although the effectiveness varied across the different types of filter methods. 
 |      **[A.1]** **LDA: Linear Discriminant Analysis** (<mark style="background-color: #CCECFF">**MASS**</mark> package)
 |             **[A.1.1]** **LDA_FULL (Linear Discriminant Analysis Without Univariate Filters)**
-|                      **[A.1.1.1]** Cross-Validation ROC Curve AUC = 0.80151
-|                      **[A.1.1.2]** Test ROC Curve AUC = 0.77199 
+|                      **[A.1.1.1]** Cross-Validation AUROC = 0.80151
+|                      **[A.1.1.2]** Test AUROC = 0.77199 
 |             **[A.1.2]** **LDA_UF_NANC (Linear Discriminant Analysis With Univariate Filters Using No P-Value Adjustment and No Correlated Predictors)** 
-|                      **[A.1.2.1]** Cross-Validation ROC Curve AUC = 0.84130
-|                      **[A.1.2.2]** Test ROC Curve AUC = 0.88657
+|                      **[A.1.2.1]** Cross-Validation AUROC = 0.84130
+|                      **[A.1.2.2]** Test AUROC = 0.88657
 |      **[A.2]** **RF: Random Forest** (<mark style="background-color: #CCECFF">**randomForest**</mark> package)
 |             **[A.2.1]** **RF_FULL (Random Forest Without Univariate Filters)**
-|                      **[A.2.1.1]** Cross-Validation ROC Curve AUC = 0.78268
-|                      **[A.2.1.2]** Test ROC Curve AUC = 0.79803
+|                      **[A.2.1.1]** Cross-Validation AUROC = 0.78268
+|                      **[A.2.1.2]** Test AUROC = 0.79803
 |             **[A.2.2]** **RF_UF_NANC (Random Forest With Univariate Filters Using No P-Value Adjustment and No Correlated Predictors)**   
-|                      **[A.2.2.1]** Cross-Validation ROC Curve AUC = 0.81301
-|                      **[A.2.2.2]** Test ROC Curve AUC = 0.82002
+|                      **[A.2.2.1]** Cross-Validation AUROC = 0.81301
+|                      **[A.2.2.2]** Test AUROC = 0.82002
 |      **[A.3]** **NB: Naive Bayes** (<mark style="background-color: #CCECFF">**klaR**</mark> package)
 |             **[A.3.1]** **NB_FULL (Linear Discriminant Analysis Without Univariate Filters)**
-|                      **[A.3.1.1]** Cross-Validation ROC Curve AUC = 0.73904
-|                      **[A.3.1.2]** Test ROC Curve AUC = 0.68055
+|                      **[A.3.1.1]** Cross-Validation AUROC = 0.73904
+|                      **[A.3.1.2]** Test AUROC = 0.68055
 |             **[A.3.2]** **NB_UF_BAC (Naive Bayes With Univariate Filters Using Bonferroni-Adjusted P-Values and With Correlated Predictors)**
-|                      **[A.3.2.1]** Cross-Validation ROC Curve AUC = 0.76825
-|                      **[A.3.2.2]** Test ROC Curve AUC = 0.75231
+|                      **[A.3.2.1]** Cross-Validation AUROC = 0.76825
+|                      **[A.3.2.2]** Test AUROC = 0.75231
 |             **[A.3.3]** **NB_UF_BANC (Naive Bayes With Univariate Filters Using Bonferroni-Adjusted P-Values and No Correlated Predictors)** 
-|                      **[A.3.3.1]** Cross-Validation ROC Curve AUC = 0.76025
-|                      **[A.3.3.2]** Test ROC Curve AUC = 0.76273
+|                      **[A.3.3.1]** Cross-Validation AUROC = 0.76025
+|                      **[A.3.3.2]** Test AUROC = 0.76273
 |
-| **[B]** The models applied with univariate filters which demonstrated the best and most consistent ROC Curve AUC metrics are as follows:
+| **[B]** The models applied with univariate filters which demonstrated the best and most consistent AUROC metrics are as follows:
 |      **[B.1]** **LDA_UF_NANC: Linear Discriminant Analysis With Univariate Filters Using No Adjustment and No Correlated Predictors** (<mark style="background-color: #CCECFF">**MASS**</mark> package)
 |
 |
@@ -2554,7 +2554,7 @@ NB_UF_BANC_Test_ROC <- roc(response = NB_UF_BANC_Test$NB_UF_BANC_Observed,
 ##################################
 # Consolidating all evaluation results
 # for the train and test sets
-# using the ROC Curve AUC metric
+# using the AUROC metric
 ##################################
 Model <- c('LDA_FULL','LDA_UF_NAC','LDA_UF_BAC','LDA_UF_NANC','LDA_UF_BANC',
            'RF_FULL','RF_UF_NAC','RF_UF_BAC','RF_UF_NANC','RF_UF_BANC',
@@ -2626,7 +2626,7 @@ print(ROCCurveAUC_Summary, row.names=FALSE)
                            groups = Set,
                            main = "Classification Model Performance Comparison",
                            ylab = "Model",
-                           xlab = "ROC Curve AUC",
+                           xlab = "AUROC",
                            auto.key = list(adj = 1),
                            type=c("p", "h"),
                            origin = 0,
