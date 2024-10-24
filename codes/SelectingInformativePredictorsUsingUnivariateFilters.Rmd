@@ -881,7 +881,7 @@ EDA.Bar.Source.FactorVar.Prop <- rbind(EDA.PropTable.Function("E2"),
                                       stack=TRUE,
                                       ylab = "Proportion",
                                       xlab = "Class",
-                                      auto.key = list(adj = 1),
+                                      auto.key = list(adj=1, space="top", columns=2),
                                       layout=(c(3,1))))
 
 ```
@@ -2612,7 +2612,7 @@ print(ROCCurveAUC_Summary, row.names=FALSE)
                            main = "Classification Model Performance Comparison",
                            ylab = "Model",
                            xlab = "AUROC",
-                           auto.key = list(adj = 1),
+                           auto.key = list(adj=1, space="top", columns=2),
                            type=c("p", "h"),
                            origin = 0,
                            alpha = 0.45,
